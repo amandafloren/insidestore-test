@@ -62,4 +62,14 @@ class SendChatToDroid {
 	def input_email(String email) {
 		WebUI.callTestCase(findTestCase("Test Cases/Open Chat/Input email to droid"),[('email') : email], FailureHandling.STOP_ON_FAILURE)
 	}
+
+	@Then("I input phone number to droid chat (.*)")
+	def input_phonenumber(String phonenumber) {
+		WebUI.callTestCase(findTestCase("Test Cases/Open Chat/Input text to droid"),[('text') : phonenumber], FailureHandling.STOP_ON_FAILURE)
+	}
+
+	@Then("I input a message to droid chat (.*)")
+	def message(String message) {
+		WebUI.callTestCase(findTestCase("Test Cases/Open Chat/Input text to droid"),[('text') : message], FailureHandling.STOP_ON_FAILURE)
+	}
 }
